@@ -7,7 +7,6 @@
 O site foi desenvolvido utilizando as seguintes tecnologias:
 - **HTML5, CSS3 e JavaScript**: Estrutura e estilização do site.
 - **Firebase Hosting**: Hospedagem do site de forma segura e escalável.
-- **Framework Front-end (possivelmente React ou Vue.js)**: Para uma experiência dinâmica e responsiva.
 - **Google Fonts & Unsplash**: Para uma tipografia refinada e imagens de alta qualidade.
 
 ## Estrutura do Site
