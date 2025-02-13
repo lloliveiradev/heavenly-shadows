@@ -1,0 +1,11 @@
+module.exports = {
+  content: [
+    './app/**/*.{html,js,jsx,ts,tsx}', // Adjust the paths according to your project structure
+    './public/index.html',
+    './web/app/**/*.{html,js,jsx,ts,tsx,css}'
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
