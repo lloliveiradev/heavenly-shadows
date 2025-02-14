@@ -12,13 +12,14 @@ export class PersonaController {
     return this.personaService.create(createPersonaDto);
   }
 
-  @Get()
-  async findAll() {
-    return await this.personaService.findAll();
+  @Post(':find')
+  findAll(@Body() options: any) {
+    return this.personaService.findAll(options);
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
+    console.log('id', id);
     return this.personaService.findOne(id);
   }
 

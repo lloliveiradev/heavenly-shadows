@@ -4,6 +4,7 @@ export * from './Contact';
 export * from './Footer';
 export * from './Hero';
 export * from './Main';
+export * from './ModalPoesia';
 export * from './Navbar';
 export * from './PersonaCard';
 export * from './PoesiaCard';

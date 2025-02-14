@@ -11,8 +11,8 @@ export class PersonaService {
     return 'This action adds a new persona';
   }
 
-  async findAll() {
-    const res = await this.firebaseService.getRecords('personas', null, {});
+  async findAll(options: any) {
+    const res = await this.firebaseService.getRecords('personas', null, options);
     return res;
   }
 

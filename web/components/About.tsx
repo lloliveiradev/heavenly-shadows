@@ -18,7 +18,7 @@ export default function About() {
                 viewport={{ once: false, amount: 0.25 }}
                 className={`mx-auto ${styles.flexCenter} flex-col w-full md:w-[70hw]`}
             >
-                <TypingText title="| Sobre" textStyles="text-center" ref="" />
+                <TypingText title="| Sobre" textStyles="text-center" />
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-1 mt-10 w-[70hw]'>
                     <motion.div variants={fadeIn('right', 'spring', 0.5, 0.75)}
@@ -32,7 +32,7 @@ export default function About() {
                         </motion.div>
                     </motion.div>
                     <motion.div variants={fadeIn('left', 'spring', 0.5, 0.75)} className='relative flex justify-center mt-5 md:mt-0 xl:mt-10'>
-                        <motion.p variants={fadeIn('up', 'tween', 0.3, 1)} className="font-normal sm:text-[22px] text-[15px] text-left text-white text-justify">
+                        <motion.p variants={fadeIn('up', 'tween', 0.3, 1)} className="font-normal sm:text-[22px] text-[15px] text-left text-white">
                             Leo L. Oliveira, escritor de poesia e ficção fantástica, nasceu em Anápolis/GO,
                             Brasil, em 1997, e desde cedo mergulhou no universo da magia e das mitologias.
                             Encontra sua essência nas influências de Fernando Pessoa e Cora Coralina,

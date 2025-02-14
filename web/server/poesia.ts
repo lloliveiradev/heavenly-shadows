@@ -1,4 +1,4 @@
-export const getPoesias = async (API_URL: string | undefined, id: string) => {
+export const getPoesias = async (API_URL: string | undefined, id?: string, options: any = {}) => {
     if (!API_URL) {
         throw new Error('API_URL environment variable is not set');
     }
@@ -6,7 +6,7 @@ export const getPoesias = async (API_URL: string | undefined, id: string) => {
         cache: 'force-cache',
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ filters: [{ key: 'persona', op: '==', val: id }] })
+        body: JSON.stringify(options)
     });
     const data = await response.json();
     return data;

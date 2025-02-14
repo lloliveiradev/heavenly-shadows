@@ -18,7 +18,7 @@ export default async function Home() {
     { name: "Contato", href: "#contact" },
   ];
   return (
-    <div className="bg-black overflow-hidden" id="pageAppElement">
+    <div className="bg-primary-black overflow-hidden" id="pageAppElement">
       <Navbar navItems={navItems} />
       <Hero
         img=""

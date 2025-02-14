@@ -24,7 +24,7 @@ export default function Main({ personas }) {
                 <TypingText title="| Personas" textStyles="text-center" />
                 <TitleText
                     title={<>Escolha a persona que deseja explorar</>}
-                    textStyles="text-center text-[20px] md:text-[25px] text-secondary-white"
+                    textStyles="text-center text-secondary-white text-[20px] md:text-[25px]"
                 />
                 <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
                     {personas.map((p: Persona, index: number) => (

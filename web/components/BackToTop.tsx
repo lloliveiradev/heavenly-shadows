@@ -7,7 +7,7 @@ export default function BackToTop() {
                 onClick={() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="p-3 bg-violet-500 text-white rounded-full shadow-xl hover:bg-violet-700 focus:outline-none"
+                className="p-3 bg-violet-500 text-white rounded-full shadow-xl hover:bg-violet-700 focus:outline-hidden"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

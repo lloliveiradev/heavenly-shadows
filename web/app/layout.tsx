@@ -18,7 +18,7 @@ export default function RootLayout({
           src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
           crossOrigin="anonymous"></script>
       </head>
-      <body className="scrollbar scrollbar-thumb-slate-700 scrollbar-thumb-rounded-lg scrollbar-track-gray-800">
+      <body className="scrollbar-rounded">
         {children}
       </body>
     </html>
