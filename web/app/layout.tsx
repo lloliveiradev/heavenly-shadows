@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
@@ -19,7 +18,7 @@ export default function RootLayout({
           src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
           crossOrigin="anonymous"></script>
       </head>
-      <body>
+      <body className="scrollbar scrollbar-thumb-slate-700 scrollbar-thumb-rounded-lg scrollbar-track-gray-800">
         {children}
       </body>
     </html>

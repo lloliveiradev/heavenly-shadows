@@ -8,7 +8,7 @@ export default function Hero({ title, subtitle, text, img }) {
     return (
         <section className='relative overflow-hidden py-16 px-10 h-[100vh]' id='home'>
             <div className={`w-full h-full inset-0 bg-[url('/images/hero-index.webp')] bg-cover bg-center absolute z-0`}>
-                <div className='absolute inset-0 bg-black opacity-50'></div>
+                <div className='absolute inset-0 bg-black opacity-70'></div>
             </div>
             <motion.div variants={staggerContainer(0.1, 0.1)} initial="hidden"
                 whileInView="show" viewport={{ once: false, amount: 0.25 }}

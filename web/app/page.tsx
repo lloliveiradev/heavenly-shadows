@@ -11,10 +11,15 @@ import { Persona } from '../types';
 
 export default async function Home() {
   const data: Persona[] = await getPersonas(process.env.API_URL);
-
+  const navItems = [
+    { name: "Home", href: "#home" },
+    { name: "Sobre", href: "#about" },
+    { name: "Personas", href: "#persons" },
+    { name: "Contato", href: "#contact" },
+  ];
   return (
     <div className="bg-black overflow-hidden" id="pageAppElement">
-      <Navbar />
+      <Navbar navItems={navItems} />
       <Hero
         img=""
         title="Sombras"

@@ -36,13 +36,10 @@ export default function PoesiaCarousel({ data }) {
         setTitle((current) => current = poesia.titulo);
         setText((current) => current = poesia.texto);
     };
-    function closeModal() {
-        setOpen(false);
-    };
 
     return (
         <section className="bg-primary-black text-white pt-20">
-            <TypingText title="| Coletânea" textStyles="text-center" />
+            <TypingText title="| Coletânea" textStyles="text-center" ref />
 
             <div className="relative pt-10">
                 <div className='overflow-hidden' ref={emblaRef}>
@@ -74,8 +71,8 @@ export default function PoesiaCarousel({ data }) {
                 </button>
             </div>
 
-            <Modal open={modalIsOpen} onClose={() => setOpen(false)}>
-                <div className="h-[90vh] text-center overflow-scroll snap-y bg-primary-black bg-opacity-70 text-white px-6 pb-10 pt-5 rounded-lg scrollbar scrollbar-thumb-gray-500" styles={{overflowX: 'hidden'}}>
+            <Modal open={modalIsOpen}>
+                <div className="h-[90vh] text-center overflow-y-scroll bg-primary-black bg-opacity-70 text-white px-6 pb-10 pt-5 rounded-lg scrollbar scrollbar-thumb-slate-700 scrollbar-thumb-rounded-lg">
                     <div className="flex items-center justify-between px-2 border-b border-gray-300 pb-4">
                         <h3 className="text-[30px] fw-bold text-white uppercase" ref={titleRef}>{title}</h3>
                         <button className="rounded-full p-2 bg-white text-black" onClick={() => setOpen(false)} >
@@ -83,14 +80,13 @@ export default function PoesiaCarousel({ data }) {
                         </button>
                     </div>
                     <div className="p-4">
-                        <p className="text-lg text-justify text-gray-100" ref={textRef} style={{ whiteSpace: 'pre-line' }}>
-                            {text.split('\\n').map((linha: string, index: number) => (
-                                <Fragment key={index}>
-                                    {linha}
-                                    <br />
-                                </Fragment>
-                            ))}
-                        </p>
+                        <TypingText textStyles="text-lg text-justify text-gray-100" ref={textRef} title={text.split('\\n').map((linha: string, index: number) => (
+                            <Fragment key={index}>
+                                {linha}
+                                <br />
+                            </Fragment>
+                        ))}>
+                        </TypingText>
                     </div>
                 </div>
             </Modal>

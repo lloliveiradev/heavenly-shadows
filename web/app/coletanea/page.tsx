@@ -15,10 +15,14 @@ export default async function Coletanea({ searchParams }: ColetaneaProps) {
     const id_persona = atob(params.hash);
     const persona: Persona = await getPersonas(process.env.API_URL, id_persona);
     const data: Poesia[] = await getPoesias(process.env.API_URL, id_persona);
-
+    const navItems = [
+        { name: "Home", href: "/" },
+        { name: "Sobre", href: "#about" },
+        { name: "Coletânea", href: "#main" },
+    ];
     return (
         <div className="bg-black overflow-hidden" id="pageAppElement">
-            <Navbar />
+            <Navbar navItems={navItems} />
             <Hero
                 img={`hero-${persona.id}.webp`}
                 title={persona.titulo}
