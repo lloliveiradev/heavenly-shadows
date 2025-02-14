@@ -14,6 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <head>
+        <script
+          src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
+          crossOrigin="anonymous"></script>
+      </head>
       <body>
         {children}
       </body>

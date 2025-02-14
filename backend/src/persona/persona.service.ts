@@ -16,15 +16,16 @@ export class PersonaService {
     return res;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} persona`;
+  findOne(id: string) {
+    const res = this.firebaseService.getRecords('personas', id, {});
+    return res;
   }
 
-  update(id: number, updatePersonaDto: UpdatePersonaDto) {
+  update(id: string, updatePersonaDto: UpdatePersonaDto) {
     return `This action updates a #${id} persona`;
   }
 
-  remove(id: number) {
+  remove(id: string) {
     return `This action removes a #${id} persona`;
   }
 }

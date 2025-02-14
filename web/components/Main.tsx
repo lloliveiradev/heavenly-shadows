@@ -5,7 +5,9 @@ import { motion } from 'framer-motion';
 
 import styles from '../styles/index';
 import { staggerContainer } from '../utils/motion';
-import { PersonaCard, TitleText, TypingText } from './index';
+import { TitleText, TypingText } from './index';
+import { Persona } from '@/types';
+import PersonaCard from './PersonaCard';
 
 export default function Main({ personas }) {
     const [active, setActive] = useState('corvus');
@@ -25,7 +27,7 @@ export default function Main({ personas }) {
                     textStyles="text-center text-[20px] md:text-[25px] text-secondary-white"
                 />
                 <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
-                    {personas.map((p, index) => (
+                    {personas.map((p: Persona, index: number) => (
                         <PersonaCard
                             key={p.id}
                             {...p}

@@ -29,7 +29,7 @@ export default function Navbar() {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
-      className={`${styles.xPaddings} py-8 relative bg-gradient-to-r from-[#1e293b] to-[#080b10]`}
+      className={`${styles.xPaddings} py-8 px-5 relative bg-gradient-to-r from-[#1e293b] to-[#080b10]`}
     >
       <div className="absolute w-[50%] inset-0 gradient-01" />
       <div className={`mx-auto flex justify-between gap-8`}>

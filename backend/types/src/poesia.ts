@@ -1,9 +1,8 @@
 export interface Poesia {
-    figcaption: string;
-    id: string;
     img: string;
     persona: string;
     resumo: string;
+    id: string;
     texto: string;
     titulo: string;
 };

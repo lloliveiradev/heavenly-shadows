@@ -16,6 +16,12 @@
       "dom.iterable",
       "esnext"
     ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
     "skipLibCheck": true,
     "strict": false,
     "incremental": true,

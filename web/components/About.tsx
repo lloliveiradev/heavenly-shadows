@@ -12,7 +12,7 @@ export default function About() {
         <section className={`${styles.paddings} pt-10 relative z-10 bg-primary-black text-white`} id='about'>
             <div className="gradient-02 z-0" />
             <motion.div
-                variants={staggerContainer}
+                variants={staggerContainer(0.5, 0.25)}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
@@ -23,14 +23,15 @@ export default function About() {
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-10 justify-center items-center'>
                     <motion.div variants={fadeIn('right', 'spring', 0.5, 0.75)}
                         className={`relative flex justify-center min-w-[170px] h-[700px] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer`}>
-                        <Image
-                            variants={fadeIn('up', 'tween', 0.3, 1)}
-                            src={poet}
-                            alt="poeta"
-                            width={400}
-                            height={400}
-                            className="object-contain rounded-lg p-0 m-0"
-                        />
+                        <motion.div variants={fadeIn('up', 'tween', 0.3, 1)}>
+                            <Image
+                                src={poet}
+                                alt="poeta"
+                                width={400}
+                                height={400}
+                                className="object-contain rounded-lg p-0 m-0"
+                            />
+                        </motion.div>
                     </motion.div>
                     <motion.p variants={fadeIn('up', 'tween', 0.2, 1)}
                         className="font-normal sm:text-[22px] text-[15px] text-center text-white">

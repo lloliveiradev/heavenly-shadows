@@ -13,9 +13,14 @@ export default async function Home() {
   const data: Persona[] = await getPersonas(process.env.API_URL);
 
   return (
-    <div className="bg-black overflow-hidden">
+    <div className="bg-black overflow-hidden" id="pageAppElement">
       <Navbar />
-      <Hero />
+      <Hero
+        img=""
+        title="Sombras"
+        subtitle="Celestes"
+        text="Explore a mente, os pensamentos, dores, amores, desejos, devaneios e fantasias do poeta na viagem literária em busca das sombras de um vislumbre celeste."
+      />
       <About />
       <Main personas={data} />
       <Contact />
