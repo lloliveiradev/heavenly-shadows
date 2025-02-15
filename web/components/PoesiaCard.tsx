@@ -6,7 +6,7 @@ import { Fragment } from 'react';
 
 export default function PoesiaCard({ id, title, img, text, openModal, persona }) {
     return (
-        <div key={id} className='flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(100%/2)] px-3'>
+        <div key={id} className='flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(100%/2)] lg:flex-[0_0_calc(100%/3)] px-3'>
             <article className='bg-[#1e293b] p-6 rounded-lg text-white space-y-4 h-full flex flex-col'>
                 <div className='h-[500px] overflow-hidden relative cursor-pointer tooltip' data-rowid={id} onClick={openModal}>
                     <Image
@@ -14,7 +14,6 @@ export default function PoesiaCard({ id, title, img, text, openModal, persona })
                         alt={title}
                         className='object-cover h-fit w-fit p-0 m-0 rounded-t-xl hover:scale-115 transform transition-all duration-300'
                         fill
-                        sizes='100vw'
                     />
                     <button type='button' className={`absolute bottom-0 right-0 bg-${persona.cores.primaria} p-2 rounded-bl-lg cursor-pointer`} title='Clique para ler a integra' data-rowid={id} onClick={openModal}>
                         <Ellipsis />

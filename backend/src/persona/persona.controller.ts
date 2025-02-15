@@ -7,10 +7,10 @@ import { UpdatePersonaDto } from './dto/update-persona.dto';
 export class PersonaController {
   constructor(private readonly personaService: PersonaService) { }
 
-  @Post()
-  create(@Body() createPersonaDto: CreatePersonaDto) {
-    return this.personaService.create(createPersonaDto);
-  }
+  // @Post()
+  // create(@Body() createPersonaDto: CreatePersonaDto) {
+  //   return this.personaService.create(createPersonaDto);
+  // }
 
   @Post(':find')
   findAll(@Body() options: any) {
@@ -23,13 +23,13 @@ export class PersonaController {
     return this.personaService.findOne(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePersonaDto: UpdatePersonaDto) {
-    return this.personaService.update(id, updatePersonaDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updatePersonaDto: UpdatePersonaDto) {
+  //   return this.personaService.update(id, updatePersonaDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.personaService.remove(id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.personaService.remove(id);
+  // }
 }

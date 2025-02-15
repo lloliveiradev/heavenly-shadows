@@ -61,6 +61,16 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+  /* Exemplo de classe .range-track */
+  input[type="range"].range-track::-webkit-slider-runnable-track {
+    @apply bg-gray-500 h-1 rounded-full;
+  }
+  input[type="range"].range-track::-moz-range-track {
+    @apply bg-gray-500 h-1 rounded-full;
+  }
+  input[type="range"].range-track::-ms-track {
+    @apply bg-gray-500 h-1 rounded-full border-transparent text-transparent;
+  }
 }
 
 @layer utilities {
@@ -68,7 +78,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Eudoxus Sans", sans-serif;
+    font-family: "Koho";
     scroll-behavior: smooth;
   }
 

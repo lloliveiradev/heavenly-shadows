@@ -20,7 +20,7 @@ export default function Hero({ title, subtitle, text, img }) {
                         {title}
                     </motion.h1>
                     {subtitle && <motion.div variants={textVariant(1.2)} className="flex flex-row justify-center items-center">
-                        <h1 className={styles.heroHeading + ' drop-shadow-xl'}>{subtitle}</h1>
+                        <h1 className={styles.heroHeading + ' drop-shadow-xl text-center'}>{subtitle}</h1>
                     </motion.div>}
                     <motion.div variants={textVariant(1.5)}>
                         <p className='text-white drop-shadow-xl fw-bold text-center mt-5 md:mt-0 text-[30px] leading-[40px] lg:text-[40px] lg:leading-[50px] px-[20px] md:px[100px] lg:px-[200px] md:text-center'>

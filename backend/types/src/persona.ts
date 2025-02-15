@@ -1,4 +1,6 @@
 export interface Persona {
+    audio: string;
+    bio: string;
     convite: string;
     cores: {
         primaria: string;
@@ -6,9 +8,11 @@ export interface Persona {
         terciaria: string;
     };
     descricao: string;
+    gif: string;
     icon: string;
     id: string;
     img: string;
+    rowid: string;
     subtitulo: string;
     titulo: string;
 };

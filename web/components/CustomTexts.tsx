@@ -7,7 +7,7 @@ import React from 'react';
 export const TypingText = ({ title, textStyles }) => (
     <motion.p
         variants={textContainer}
-        className={`font-normal text-[14px] text-secondary-white ${textStyles}`}
+        className={textStyles}
     >
         {Array.from(title).map((letter: string, index) => (
             <motion.span variants={textVariant2} key={index}>

@@ -21,9 +21,8 @@ export default function Navbar({ navItems }) {
       whileInView="show"
       className={`${styles.xPaddings} py-8 px-5 relative bg-linear-to-r from-[#1e293b] to-[#080b10]`}
     >
-      <div className="absolute w-[50%] inset-0 gradient-01" />
       <div className={`mx-auto flex justify-between gap-8`}>
-        <Link href="#home" className="mr-4 block cursor-pointer pt-2" >
+        <Link href="#home" className="mr-4 block cursor-pointer pt-1" >
           <Image
             src={logo}
             alt="logo sombras celestes"

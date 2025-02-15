@@ -7,10 +7,10 @@ import { UpdatePoesiaDto } from './dto/update-poesia.dto';
 export class PoesiaController {
   constructor(private readonly poesiaService: PoesiaService) { }
 
-  @Post()
-  create(@Body() createPoesiaDto: CreatePoesiaDto) {
-    return this.poesiaService.create(createPoesiaDto);
-  }
+  // @Post()
+  // create(@Body() createPoesiaDto: CreatePoesiaDto) {
+  //   return this.poesiaService.create(createPoesiaDto);
+  // }
 
   @Post(':find')
   findAll(@Body() options: any) {
@@ -22,13 +22,13 @@ export class PoesiaController {
     return this.poesiaService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePoesiaDto: UpdatePoesiaDto) {
-    return this.poesiaService.update(+id, updatePoesiaDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updatePoesiaDto: UpdatePoesiaDto) {
+  //   return this.poesiaService.update(+id, updatePoesiaDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.poesiaService.remove(+id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.poesiaService.remove(+id);
+  // }
 }

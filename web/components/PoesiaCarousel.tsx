@@ -8,10 +8,12 @@ import { motion } from 'framer-motion';
 import { staggerContainer } from '../utils/motion';
 import PoesiaCard from './PoesiaCard';
 import { useRef, useState } from 'react';
-import ModalPoesia from './ModalPoesia';
+import Modal from './Modal';
+import AudioPlayer from './AudioPlayer';
+import splitText from '@/utils/splitText';
 
 export default function PoesiaCarousel({ data, persona }) {
-    // Embla Carousel
+    // Carousel
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: false,
         align: 'start',
@@ -32,11 +34,13 @@ export default function PoesiaCarousel({ data, persona }) {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
     function openModal(event: React.MouseEvent<HTMLElement>) {
+        setText('');
+        setTitle('');
         setOpen(true);
         const rowid = event.currentTarget.getAttribute('data-rowid');
         const poesia = data.find((poesia: Poesia) => poesia.id === rowid);
-        setTitle((current) => current = poesia.titulo);
-        setText((current) => current = poesia.texto);
+        setTitle(poesia.titulo);
+        setText(poesia.texto);
     };
 
     return (
@@ -48,7 +52,13 @@ export default function PoesiaCarousel({ data, persona }) {
                 viewport={{ once: false, amount: 0.25 }}
             >
                 <TypingText title="| Coletânea" textStyles="text-center" />
-                <TitleText title={<>{persona.convite.replace(/[\n]/g, '')}</>} textStyles="text-center text-[20px] md:text-[25px] px-20 lg:px-[200px] pt-5" />
+                <div className='flex items-center justify-center pt-5'>
+                    <AudioPlayer src={persona.audio} />
+                </div>
+                <TitleText
+                    title={<>{persona.convite.replace(/[\n]/g, '')}</>}
+                    textStyles="text-center text-[20px] md:text-[25px] px-20 lg:px-[200px] pt-5"
+                />
             </motion.div>
 
             <div className="flex items-center gap-2 pt-10 px-3">
@@ -85,20 +95,27 @@ export default function PoesiaCarousel({ data, persona }) {
                 </div>
             </div>
 
-            <ModalPoesia open={modalIsOpen} textRef={textRef} text={text} titleRef={titleRef} title={title} setOpen={setOpen} />
+            <Modal open={modalIsOpen}>
+                <div className="h-[90vh] text-center overflow-y-scroll bg-primary-black bg-opacity-70 text-white px-6 pb-10 pt-5 rounded-lg scrollbar-rounded">
+                    <div className="flex items-center justify-between px-2 border-b border-gray-300 pb-4">
+                        <h3 className="text-[30px] fw-bold text-white uppercase" ref={titleRef}>{title}</h3>
+                        <button className="rounded-full p-2 bg-white text-black cursor-pointer" onClick={() => { setOpen(false), setText(''), setTitle(''); }} >
+                            <XIcon />
+                        </button>
+                    </div>
+
+                    <div className="p-4">
+                        <motion.div variants={staggerContainer(1, 1)}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: false, amount: 0.25 }}
+                            className="text-lg text-justify text-gray-100" ref={textRef}
+                        >
+                            {splitText(text)}
+                        </motion.div>
+                    </div>
+                </div>
+            </Modal>
         </section>
     )
-};
-
-const childVariant = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-};
-
-const lineContainer = { // Nova variante para as linhas
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: { staggerChildren: 0.05 }, // Velocidade da digitação por linha
-    },
 };

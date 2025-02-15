@@ -14,9 +14,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head>
-        <script
-          src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
-          crossOrigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@500&amp;display=swap" rel="stylesheet"></link>
       </head>
       <body className="scrollbar-rounded">
         {children}

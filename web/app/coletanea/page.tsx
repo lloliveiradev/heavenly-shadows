@@ -9,6 +9,8 @@ import PoesiaCarousel from "@/components/PoesiaCarousel";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import PersonaAbout from "@/components/PersonaAbout";
+import SunOrbit from "@/components/SunOrbit";
 
 export default async function Coletanea({ searchParams }: ColetaneaProps) {
     const params = await searchParams;
@@ -28,11 +30,12 @@ export default async function Coletanea({ searchParams }: ColetaneaProps) {
         <div className="bg-primary-black overflow-hidden" id="pageAppElement">
             <Navbar navItems={navItems} />
             <Hero
-                img={persona.img}
+                img={`./images/hero-${persona.id}.webp`}
                 title={persona.titulo}
                 subtitle={persona.subtitulo}
                 text=""
             />
+            <PersonaAbout persona={persona} />
             <PoesiaCarousel data={data} persona={persona} />
             <Footer />
         </div>
