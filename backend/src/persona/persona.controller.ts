@@ -19,7 +19,6 @@ export class PersonaController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    console.log('id', id);
     return this.personaService.findOne(id);
   }
 

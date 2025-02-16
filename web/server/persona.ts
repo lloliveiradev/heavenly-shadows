@@ -3,11 +3,18 @@ import { Persona } from '@/types';
 import { Flame, Leaf, Droplet, Wind } from 'lucide-react';
 import React from 'react';
 
+/**
+ * 
+ * @param API_URL 
+ * @param id 
+ * @param options 
+ * @returns {Persona[]}
+ */
 export const getPersonas = async (API_URL: string | undefined, id?: string, options?: any) => {
     if (!API_URL) {
         throw new Error('API_URL environment variable is not set');
     }
-    const response = await fetch(`${API_URL}/persona${id ? `/id=${id}` : '/find'}`, {
+    const response = await fetch(`${API_URL}/api/persona${id ? `/${id}` : '/find'}`, {
         cache: 'force-cache',
         method: id ? 'GET' : 'POST',
         headers: { 'Content-Type': 'application/json' },

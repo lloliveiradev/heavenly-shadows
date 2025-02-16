@@ -7,9 +7,9 @@ import { FirebaseService } from 'src/firebase/firebase.service';
 export class PoesiaService {
   constructor(private readonly firebaseService: FirebaseService) { }
 
-  create(createPoesiaDto: CreatePoesiaDto) {
-    return 'This action adds a new poesia';
-  }
+  // create(createPoesiaDto: CreatePoesiaDto) {
+  //   return 'This action adds a new poesia';
+  // }
 
   async findAll(options: any) {
     const res = await this.firebaseService.getRecords('poesias', null, options);
@@ -20,11 +20,11 @@ export class PoesiaService {
     return `This action returns a #${id} poesia`;
   }
 
-  update(id: number, updatePoesiaDto: UpdatePoesiaDto) {
-    return `This action updates a #${id} poesia`;
-  }
+  // update(id: number, updatePoesiaDto: UpdatePoesiaDto) {
+  //   return `This action updates a #${id} poesia`;
+  // }
 
-  remove(id: number) {
-    return `This action removes a #${id} poesia`;
-  }
+  // remove(id: number) {
+  //   return `This action removes a #${id} poesia`;
+  // }
 }

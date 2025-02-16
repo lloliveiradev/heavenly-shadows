@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
 
-export default function PersonaCard({ id, img, icon, titulo, subtitulo, descricao, index, active, handleClick }) {
+export default function PersonaCard({ id, img, icon, titulo, subtitulo, descricao, cores, index, active, handleClick }) {
     return (
         <motion.div
             variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
@@ -25,16 +25,16 @@ export default function PersonaCard({ id, img, icon, titulo, subtitulo, descrica
                     {titulo}
                 </h3>
             ) : (
-                <div className="absolute bottom-0 p-8 flex justify-start w-full flex-col bg-[rgba(0,0,0,0.6)] rounded-b-[24px]">
-                    <h2 className="mt-[24px] font-semibold sm:text-[32px] text-[24px] text-white flex items-center gap-5">
+                <div className="absolute bottom-0 p-3 pt-1 lg:pt-8 lg:p-8 flex justify-start w-full flex-col bg-[rgba(0,0,0,0.6)] rounded-b-[24px]">
+                    <h2 className="mt-1 lg:mt-[24px] font-semibold sm:text-[32px] text-[24px] text-white flex items-center gap-5">
                         {titulo}{icon}
                     </h2>
                     <p className='font-bold uppercase mb-2'>{subtitulo}</p>
                     <p className="font-normal text-[16px] leading-[20.16px] text-white text-justify">
                         {descricao}
                     </p>
-                    <Link href={`/coletanea?hash=${btoa(id)}`}>
-                        <button type='button' className='mt-4 bg-violet-500 text-white font-bold uppercase py-2 px-4 rounded-[8px] hover:bg-violet-700 transition-[background-color] duration-300 ease-in-out float-end cursor-pointer'>
+                    <Link href={`/coletanea?persona=${id}`}>
+                        <button type='button' className={`mt-1 lg:mt-4 bg-${cores.primaria} text-white font-bold uppercase py-2 px-4 rounded-[8px] hover:bg-${cores.secundaria} transition-[background-color] duration-300 ease-in-out float-end cursor-pointer`}>
                             Explore
                         </button>
                     </Link>

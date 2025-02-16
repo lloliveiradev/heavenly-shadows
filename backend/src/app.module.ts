@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { FirebaseModule } from './firebase/firebase.module';
 import { PersonaModule } from './persona/persona.module';
 import { PoesiaModule } from './poesia/poesia.module';
+import { ContatoModule } from './contato/contato.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { PoesiaModule } from './poesia/poesia.module';
     FirebaseModule.forRoot(),
     PersonaModule,
     PoesiaModule,
+    ContatoModule,
   ],
   controllers: [AppController],
   providers: [AppService],

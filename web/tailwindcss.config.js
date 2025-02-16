@@ -11,7 +11,7 @@ module.exports = {
         'bg-gray-300',// (Prata Lunar)
         'bg-blue-500',// (Azul Noturno)
         'bg-purple-400',// (Roxo Suave)
-        'bg-purple-900',// (Roxo Escuro)
+        'bg-purple-600',// (Roxo Escuro)
         'bg-gray-700',// (Cinza Escuro)
     ],
 };

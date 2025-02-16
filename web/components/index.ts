@@ -14,3 +14,4 @@ export * from './PoesiaCarousel';
 export * from './PopoverButton';
 export * from './SunOrbit';
 export * from './CustomTexts';
+export * from './WattpadLogo';

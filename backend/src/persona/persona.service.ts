@@ -7,9 +7,9 @@ import { FirebaseService } from 'src/firebase/firebase.service';
 export class PersonaService {
   constructor(private readonly firebaseService: FirebaseService) { }
 
-  create(createPersonaDto: CreatePersonaDto) {
-    return 'This action adds a new persona';
-  }
+  // create(createPersonaDto: CreatePersonaDto) {
+  //   return 'This action adds a new persona';
+  // }
 
   async findAll(options: any) {
     const res = await this.firebaseService.getRecords('personas', null, options);
@@ -21,11 +21,11 @@ export class PersonaService {
     return res;
   }
 
-  update(id: string, updatePersonaDto: UpdatePersonaDto) {
-    return `This action updates a #${id} persona`;
-  }
+  // update(id: string, updatePersonaDto: UpdatePersonaDto) {
+  //   return `This action updates a #${id} persona`;
+  // }
 
-  remove(id: string) {
-    return `This action removes a #${id} persona`;
-  }
+  // remove(id: string) {
+  //   return `This action removes a #${id} persona`;
+  // }
 }

@@ -24,13 +24,13 @@ export default async function Home() {
         img=""
         title="Sombras"
         subtitle="Celestes"
-        text="Explore a mente, os pensamentos, dores, amores, desejos, devaneios e fantasias do poeta na viagem literária em busca das sombras de um vislumbre celeste."
+        text='embarque nesta viagem literária com o poeta interestelar em busca das sombras de um vislumbre celeste'
       />
       <About />
       <Main personas={data} />
-      <Contact />
+      <Contact API_URL={process.env.API_URL} />
       <Footer />
-      <BackToTop />
+      <BackToTop cores={{}} />
     </div>
   );
 }

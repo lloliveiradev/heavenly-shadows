@@ -9,7 +9,7 @@ function splitText(text: string) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: wordIx * 0.2 }}
         >
-            {word === '\\n' ? <br /> : (word + ' ')}
+            {['\n', '\\n'].includes(word) ? <br /> : (word + ' ')}
         </motion.span>
     ));
 };

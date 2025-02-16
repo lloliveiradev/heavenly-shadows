@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { PlayCircle, PauseCircle, Volume, Volume1, Volume2, VolumeX, Clock } from 'lucide-react';
+import { PlayCircle, PauseCircle, Volume, Volume1, Volume2, VolumeX } from 'lucide-react';
 import { LineVertical } from '@phosphor-icons/react';
 
 export default function AudioPlayer({ src }) {
@@ -93,8 +93,8 @@ export default function AudioPlayer({ src }) {
                     />
                 </div>
             </div>
-            <div className='flex items-center gap-2 pt-2'>
-                <input
+            <div className='flex items-center justify-center gap-2 pt-2'>
+                {/* <input
                     type="range"
                     min="0"
                     max={duration}
@@ -102,8 +102,8 @@ export default function AudioPlayer({ src }) {
                     value={currentTime}
                     onChange={changeTime}
                     className="w-[65%] cursor-pointer"
-                />
-                <span>{formatTime(currentTime)}</span> / <span>{formatTime(duration)}</span>
+                /> */}
+                <span>{formatTime(currentTime)}</span> {/*/ <span>{formatTime(duration)}</span>*/}
 
             </div>
         </div>

@@ -1,13 +1,13 @@
 'use client';
 
-export default function BackToTop() {
+export default function BackToTop({ cores }) {
     return (
         <div className="fixed bottom-4 right-4 z-50">
             <button
                 onClick={() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="p-3 bg-violet-500 text-white rounded-full shadow-xl hover:bg-violet-700 focus:outline-hidden"
+                className={`p-3 bg-${cores?.primaria || 'violet-500'} cursor-pointer text-white rounded-full shadow-xl hover:bg-${cores?.primaria || 'violet-700'} focus:outline-hidden`}
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

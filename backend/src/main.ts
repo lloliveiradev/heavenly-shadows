@@ -4,9 +4,10 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
   configureSwagger(app);
   configureValidationPipe(app);
+  app.setGlobalPrefix('api');
   await app.listen(process.env.PORT ?? 5005);
 }
 
@@ -26,7 +27,7 @@ function configureValidationPipe(app: INestApplication) {
     new ValidationPipe({
       whitelist: true, // Strip properties not defined in DTOs
       forbidNonWhitelisted: true, // Throw an error if non-whitelisted properties are provided
-      transform: true, // Automatically transform payloads to DTO instances
+      transform: false, // Automatically transform payloads to DTO instances
     }),
   );
 };
