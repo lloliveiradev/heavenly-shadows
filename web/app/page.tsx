@@ -1,12 +1,13 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Main from "../components/Main";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
-import BackToTop from "../components/BackToTop";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Main from "@/components/Main";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 import { getPersonas } from '../server/persona';
+
 import { Persona } from '../types';
 
 export default async function Home() {
@@ -17,20 +18,22 @@ export default async function Home() {
     { name: "Personas", href: "#persons" },
     { name: "Contato", href: "#contact" },
   ];
+  const cores = { primaria: 'slate-700', secundaria: '#1e2939', terciaria: 'blue-900', gradient: '#1d293d' }
   return (
     <div className="bg-primary-black overflow-hidden" id="pageAppElement">
-      <Navbar navItems={navItems} />
+      <Navbar navItems={navItems} cores={cores} />
       <Hero
+        cores={cores}
         img=""
         title="Sombras"
         subtitle="Celestes"
-        text='embarque nesta viagem literária com o poeta interestelar em busca das sombras de um vislumbre celeste'
+        text='um viagem literária ao lado poeta interestelar'
       />
-      <About />
+      <About cores={cores} />
       <Main personas={data} />
       <Contact API_URL={process.env.API_URL} />
       <Footer />
-      <BackToTop cores={{}} />
+      <BackToTop cores={cores} />
     </div>
   );
 }

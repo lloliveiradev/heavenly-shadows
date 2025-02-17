@@ -7,7 +7,7 @@ export default function BackToTop({ cores }) {
                 onClick={() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className={`p-3 bg-${cores?.primaria || 'violet-500'} cursor-pointer text-white rounded-full shadow-xl hover:bg-${cores?.primaria || 'violet-700'} focus:outline-hidden`}
+                className={`p-3 bg-${cores?.secundaria?.includes('#') ? `[${cores.secundaria}]` : cores?.secundaria || 'violet-500'} cursor-pointer text-white rounded-full shadow-xl hover:bg-${cores?.primaria || 'violet-700'} focus:outline-hidden`}
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

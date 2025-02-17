@@ -6,7 +6,7 @@ import { staggerContainer } from '../utils/motion';
 import styles from '../styles/index';
 import Card from './Card';
 
-export default function About() {
+export default function About({ cores }) {
     const bio = `Nascido em 1997, Brasil, Leo é um jovem escritor de poesia e ficção fantástica que deu início em sua jornada
     de escrita aos 20 anos, inspirado por grandes franquias da cultura Pop, como: O Senhor dos Anéis, Percy Jackson e Harry
     Potter. Leo tem sido um grande admirador do universo da magia, do universo e da espiritualidade, se interessando e
@@ -32,7 +32,7 @@ export default function About() {
             >
                 <TypingText title="| Sobre" textStyles="text-center pb-10" />
 
-                <Card img={'/images/poet-3.webp'} titulo="Leo L. Oliveira" descricao={bio} subtitulo="Poeta Interestelar" />
+                <Card img={'/images/poet-4.jpg'} titulo="Leo L. Oliveira" descricao={bio} subtitulo="Poeta Interestelar" cores={cores} />
             </motion.div>
         </section>
     )

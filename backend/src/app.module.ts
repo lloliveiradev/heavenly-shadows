@@ -6,6 +6,7 @@ import { FirebaseModule } from './firebase/firebase.module';
 import { PersonaModule } from './persona/persona.module';
 import { PoesiaModule } from './poesia/poesia.module';
 import { ContatoModule } from './contato/contato.module';
+import { PlanetaModule } from './planeta/planeta.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ContatoModule } from './contato/contato.module';
     PersonaModule,
     PoesiaModule,
     ContatoModule,
+    PlanetaModule,
   ],
   controllers: [AppController],
   providers: [AppService],

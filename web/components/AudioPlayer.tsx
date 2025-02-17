@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { PlayCircle, PauseCircle, Volume, Volume1, Volume2, VolumeX } from 'lucide-react';
 import { LineVertical } from '@phosphor-icons/react';
 
-export default function AudioPlayer({ src }) {
+export default function AudioPlayer({ src, cores }) {
     const audioRef = useRef(null);
     const volumeRangeRef = useRef(null);
     const volumeRef = useRef(null);
@@ -64,7 +64,7 @@ export default function AudioPlayer({ src }) {
     };
 
     return (
-        <div className="p-4 bg-[#1e293b] text-white rounded-md">
+        <div className={`p-4 bg-${cores?.primaria || 'gray-700'} text-white rounded-md`}>
             <div className='flex items-center justify-center border-b border-gray-300 pb-2'>
                 <audio ref={audioRef} src={src} loop />
                 <div className='flex items-center gap-2'>

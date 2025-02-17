@@ -5,19 +5,22 @@ import { FirebaseService } from 'src/firebase/firebase.service';
 
 @Injectable()
 export class PersonaService {
-  constructor(private readonly firebaseService: FirebaseService) { }
+  private readonly collection = 'personas';
+  constructor(private readonly firebaseService: FirebaseService) {
+    this.collection = 'personas';
+  }
 
   // create(createPersonaDto: CreatePersonaDto) {
   //   return 'This action adds a new persona';
   // }
 
   async findAll(options: any) {
-    const res = await this.firebaseService.getRecords('personas', null, options);
+    const res = await this.firebaseService.getRecords(this.collection, null, options);
     return res;
   }
 
   findOne(id: string) {
-    const res = this.firebaseService.getRecords('personas', id, {});
+    const res = this.firebaseService.getRecords(this.collection, id, {});
     return res;
   }
 

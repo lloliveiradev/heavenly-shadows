@@ -19,7 +19,7 @@ export class PoesiaController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.poesiaService.findOne(+id);
+    return this.poesiaService.findOne(id);
   }
 
   // @Patch(':id')

@@ -22,10 +22,10 @@ export const getPersonas = async (API_URL: string | undefined, id?: string, opti
     });
     const data = await response.json();
     const icons = {
-        Wind: React.createElement(Wind),
-        Flame: React.createElement(Flame),
-        Droplet: React.createElement(Droplet),
-        Leaf: React.createElement(Leaf),
+        Wind: React.createElement(Wind, { size: 40 }),
+        Flame: React.createElement(Flame, { size: 40 }),
+        Droplet: React.createElement(Droplet, { size: 40 }),
+        Leaf: React.createElement(Leaf, { size: 40 }),
     };
     if (id) {
         data.icon = icons[data.icon];

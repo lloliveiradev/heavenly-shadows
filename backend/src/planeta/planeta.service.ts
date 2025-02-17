@@ -1,17 +1,17 @@
 import { Injectable } from '@nestjs/common';
-import { CreatePoesiaDto } from './dto/create-poesia.dto';
-import { UpdatePoesiaDto } from './dto/update-poesia.dto';
+import { CreatePlanetaDto } from './dto/create-planeta.dto';
+import { UpdatePlanetaDto } from './dto/update-planeta.dto';
 import { FirebaseService } from 'src/firebase/firebase.service';
 
 @Injectable()
-export class PoesiaService {
-  private readonly collection = 'poesias';
+export class PlanetaService {
+  private readonly collection = 'planetas';
   constructor(private readonly firebaseService: FirebaseService) {
-    this.collection = 'poesias';
+    this.collection = 'planetas';
   }
 
-  // create(createPoesiaDto: CreatePoesiaDto) {
-  //   return 'This action adds a new poesia';
+  // create(createPlanetaDto: CreatePlanetaDto) {
+  //   return 'This action adds a new planeta';
   // }
 
   async findAll(options: any) {
@@ -24,11 +24,11 @@ export class PoesiaService {
     return res;
   }
 
-  // update(id: number, updatePoesiaDto: UpdatePoesiaDto) {
-  //   return `This action updates a #${id} poesia`;
+  // update(id: number, updatePlanetaDto: UpdatePlanetaDto) {
+  //   return `This action updates a #${id} planeta`;
   // }
 
   // remove(id: number) {
-  //   return `This action removes a #${id} poesia`;
+  //   return `This action removes a #${id} planeta`;
   // }
 }

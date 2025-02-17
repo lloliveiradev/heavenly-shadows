@@ -10,7 +10,7 @@ import { Persona } from '@/types';
 import PersonaCard from './PersonaCard';
 
 export default function Main({ personas }) {
-    const [active, setActive] = useState('corvus');
+    const [active, setActive] = useState('apollo');
 
     return (
         <section className={`${styles.paddings} bg-primary-black text-white pt-20`} id="persons">

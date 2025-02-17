@@ -1,3 +1,7 @@
 export * from './src/contato';
 export * from './src/poesia';
 export * from './src/persona';
+export * from './src/planeta';
+export * from './src/regiao';
+export * from './src/capital';
+export * from './src/local';

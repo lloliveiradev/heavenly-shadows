@@ -25,9 +25,9 @@ function configureSwagger(app: INestApplication) {
 function configureValidationPipe(app: INestApplication) {
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true, // Strip properties not defined in DTOs
-      forbidNonWhitelisted: true, // Throw an error if non-whitelisted properties are provided
-      transform: false, // Automatically transform payloads to DTO instances
+      whitelist: true,
+      forbidNonWhitelisted: true,
+      transform: false,
     }),
   );
 };

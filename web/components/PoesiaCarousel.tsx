@@ -12,7 +12,7 @@ import Modal from './Modal';
 import AudioPlayer from './AudioPlayer';
 import splitText from '@/utils/splitText';
 
-export default function PoesiaCarousel({ data, persona }) {
+export default function PoesiaCarousel({ poesias, persona }) {
     // Carousel
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: false,
@@ -38,7 +38,7 @@ export default function PoesiaCarousel({ data, persona }) {
         setTitle('');
         setOpen(true);
         const rowid = event.currentTarget.getAttribute('data-rowid');
-        const poesia = data.find((poesia: Poesia) => poesia.id === rowid);
+        const poesia = poesias.find((poesia: Poesia) => poesia.id === rowid);
         setTitle(poesia.titulo);
         setText(poesia.texto);
     };
@@ -53,7 +53,7 @@ export default function PoesiaCarousel({ data, persona }) {
             >
                 <TypingText title="| Coletânea" textStyles="text-center" />
                 <div className='flex items-center justify-center pt-5'>
-                    <AudioPlayer src={persona.audio} />
+                    <AudioPlayer src={persona.audio} cores={persona.cores} />
                 </div>
                 <TitleText
                     title={<>{persona.convite.replace(/[\n]/g, '')}</>}
@@ -72,7 +72,7 @@ export default function PoesiaCarousel({ data, persona }) {
                 </div>
                 <div className='overflow-hidden flex-1 items-center justify-center' ref={emblaRef}>
                     <div className='flex'>
-                        {data.map((poesia: Poesia, i: number) => (
+                        {poesias.map((poesia: Poesia, i: number) => (
                             <PoesiaCard
                                 key={poesia.id}
                                 id={poesia.id}
