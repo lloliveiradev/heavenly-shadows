@@ -1,16 +1,21 @@
 'use client';
 
 import useEmblaCarousel from 'embla-carousel-react';
-import { ChevronLeft, ChevronRight, XIcon } from 'lucide-react';
-import { TitleText, TypingText } from './index';
-import { Poesia } from '@/types';
 import { motion } from 'framer-motion';
-import { staggerContainer } from '../utils/motion';
-import PoesiaCard from './PoesiaCard';
+import { ChevronLeft, ChevronRight, XIcon } from 'lucide-react';
 import { useRef, useState } from 'react';
-import Modal from './Modal';
+
 import AudioPlayer from './AudioPlayer';
+import PoesiaCard from './PoesiaCard';
+import Modal from './Modal';
+import { TitleText, TypingText } from './index';
+
 import splitText from '@/utils/splitText';
+import { staggerContainer } from '@/utils/motion';
+
+import styles from '@/styles';
+
+import { Poesia } from '@/types';
 
 export default function PoesiaCarousel({ poesias, persona }) {
     // Carousel
@@ -42,9 +47,9 @@ export default function PoesiaCarousel({ poesias, persona }) {
         setTitle(poesia.titulo);
         setText(poesia.texto);
     };
-
+    const { audio, cores, convite } = persona;
     return (
-        <section className="bg-primary-black text-white pt-20" id='main'>
+        <section className={`${styles.paddings} pt-10 relative bg-primary-black text-white`} id='main'>
             <motion.div
                 variants={staggerContainer(0.1, 0.1)}
                 initial="hidden"
@@ -53,24 +58,16 @@ export default function PoesiaCarousel({ poesias, persona }) {
             >
                 <TypingText title="| Coletânea" textStyles="text-center" />
                 <div className='flex items-center justify-center pt-5'>
-                    <AudioPlayer src={persona.audio} cores={persona.cores} />
+                    <AudioPlayer src={audio} cores={cores} />
                 </div>
                 <TitleText
-                    title={<>{persona.convite.replace(/[\n]/g, '')}</>}
+                    title={<>{convite.replace(/[\n]/g, '')}</>}
                     textStyles="text-center text-[20px] md:text-[25px] px-20 lg:px-[200px] pt-5"
                 />
             </motion.div>
 
-            <div className="flex items-center gap-2 pt-10 px-3">
-                <div className='flex items-center justify-center'>
-                    <button
-                        className='bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-lg cursor-pointer'
-                        onClick={scrollPrev}
-                    >
-                        <ChevronLeft className='w-6 h-6 text-gray-600' />
-                    </button>
-                </div>
-                <div className='overflow-hidden flex-1 items-center justify-center' ref={emblaRef}>
+            <div className="relative pt-10">
+                <div className='overflow-hidden' ref={emblaRef}>
                     <div className='flex'>
                         {poesias.map((poesia: Poesia, i: number) => (
                             <PoesiaCard
@@ -85,14 +82,20 @@ export default function PoesiaCarousel({ poesias, persona }) {
                         ))}
                     </div>
                 </div>
-                <div className='flex items-center justify-center'>
-                    <button
-                        className='bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-lg cursor-pointer'
-                        onClick={scrollNext}
-                    >
-                        <ChevronRight className='w-6 h-6 text-gray-600' />
-                    </button>
-                </div>
+
+                <button
+                    className={`bg-[${cores.fundo || '#fff'}] flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 md:-left-6 -translate-y-1/2 z-10 -translate-x-1/2 cursor-pointer hover:bg-gray-200`}
+                    onClick={scrollPrev}
+                >
+                    <ChevronLeft className={`w-6 h-6 text-[${cores?.texto || '#1e2939'}]`} />
+                </button>
+
+                <button
+                    className={`bg-[${cores.fundo || '#fff'}] flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 -right-10 md:-right-16 -translate-y-1/2 z-10 -translate-x-1/2 cursor-pointer hover:bg-gray-200`}
+                    onClick={scrollNext}
+                >
+                    <ChevronRight className={`w-6 h-6 text-[${cores?.texto || '#1e2939'}]`} />
+                </button>
             </div>
 
             <Modal open={modalIsOpen}>

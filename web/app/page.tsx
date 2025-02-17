@@ -18,7 +18,7 @@ export default async function Home() {
     { name: "Personas", href: "#persons" },
     { name: "Contato", href: "#contact" },
   ];
-  const cores = { primaria: 'slate-700', secundaria: '#1e2939', terciaria: 'blue-900', gradient: '#1d293d' }
+  const cores = { primaria: 'slate-700', secundaria: '#1e2939', terciaria: 'blue-900', gradient: '#1d293d', texto: 'white', titulo: 'slate-700' }
   return (
     <div className="bg-primary-black overflow-hidden" id="pageAppElement">
       <Navbar navItems={navItems} cores={cores} />

@@ -28,7 +28,7 @@ export default function PlanetaCarousel({ planeta, persona }) {
     function scrollNext() {
         emblaApi?.scrollNext();
     };
-    const { img, titulo, subtitulo, descricao, regioes } = planeta;
+    const { capital, img, titulo, subtitulo, descricao, regioes } = planeta;
     const { cores } = persona;
     return (
         <section className={`${styles.paddings} pt-10 relative bg-primary-black text-white`} id='planet'>
@@ -40,8 +40,18 @@ export default function PlanetaCarousel({ planeta, persona }) {
                 className={`mx-auto ${styles.flexCenter} flex-col w-full md:w-[70hw]`}
             >
                 <TypingText title="| Planeta" textStyles="text-center mb-5" />
-                <Card img={img} titulo={titulo} subtitulo={subtitulo} descricao={descricao} cores={cores} />
+                <Card img={img} titulo={titulo} subtitulo={subtitulo} descricao={descricao} cores={cores} position='left' />
             </motion.div>
+
+            <motion.div
+                variants={staggerContainer(0.1, 0.1)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}>
+                <TypingText title="| Capital" textStyles="text-center my-5" />
+                <Card img={capital.img} titulo={capital.titulo} subtitulo={capital.subtitulo} descricao={capital.descricao} cores={cores} position='right' />
+            </motion.div>
+
             <motion.div
                 variants={staggerContainer(0.1, 0.1)}
                 initial="hidden"
@@ -49,6 +59,7 @@ export default function PlanetaCarousel({ planeta, persona }) {
                 viewport={{ once: false, amount: 0.25 }}>
                 <TypingText title="| Regiões" textStyles="text-center mt-5" />
             </motion.div>
+
             <div className="relative pt-10">
                 <div className='overflow-hidden' ref={emblaRef}>
                     <div className='flex'>
@@ -64,17 +75,19 @@ export default function PlanetaCarousel({ planeta, persona }) {
                         ))}
                     </div>
                 </div>
+
                 <button
-                    className='bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 md:-left-6 -translate-y-1/2 z-10 -translate-x-1/2 cursor-pointer hover:bg-gray-200'
+                    className={`bg-[${cores.fundo || '#fff'}] flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 md:-left-6 -translate-y-1/2 z-10 -translate-x-1/2 cursor-pointer hover:bg-gray-200`}
                     onClick={scrollPrev}
                 >
-                    <ChevronLeft className='w-6 h-6 text-gray-800' />
+                    <ChevronLeft className={`w-6 h-6 text-[${cores?.texto || '#1e2939'}]`} />
                 </button>
+
                 <button
-                    className='bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 -right-10 md:-right-16 -translate-y-1/2 z-10 -translate-x-1/2 cursor-pointer hover:bg-gray-200'
+                    className={`bg-[${cores.fundo || '#fff'}] flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 -right-10 md:-right-16 -translate-y-1/2 z-10 -translate-x-1/2 cursor-pointer hover:bg-gray-200`}
                     onClick={scrollNext}
                 >
-                    <ChevronRight className='w-6 h-6 text-gray-800' />
+                    <ChevronRight className={`w-6 h-6 text-[${cores?.texto || '#1e2939'}]`} />
                 </button>
             </div>
         </section>

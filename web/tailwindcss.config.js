@@ -2,9 +2,14 @@
 module.exports = {
     safelist: [
         //apollo
-        'bg-yellow-500',
-        'text-yellow-500',
-        'from-[#af8023]',
+        'bg-[#1e2939]',//fundo
+        'bg-[#bd9d5f]',//primaria
+        'bg-[#af8023]',//secundaria
+        'from-[#af8023]',//gradiente
+        'text-[#1e2939]',//fundo
+        'text-[#bd9d5f]',//primaria e titulo
+        'text-[#af8023]',//secundaria
+        'text-[#f3f4f6]',//texto
         //irwin
         'bg-cyan-800',
         'text-cyan-800',

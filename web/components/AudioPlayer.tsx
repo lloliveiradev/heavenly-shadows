@@ -64,7 +64,7 @@ export default function AudioPlayer({ src, cores }) {
     };
 
     return (
-        <div className={`p-4 bg-${cores?.primaria || 'gray-700'} text-white rounded-md`}>
+        <div className={`p-4 bg-[${cores?.primaria || '#364153'}] text-white rounded-md`}>
             <div className='flex items-center justify-center border-b border-gray-300 pb-2'>
                 <audio ref={audioRef} src={src} loop />
                 <div className='flex items-center gap-2'>

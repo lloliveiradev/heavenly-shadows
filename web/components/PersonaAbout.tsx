@@ -18,7 +18,7 @@ export default function PersonaAbout({ persona }) {
             >
                 <TypingText title="| Sobre" textStyles="text-center pb-10" />
 
-                <Card img={persona.gif || persona.img} titulo={persona.titulo} descricao={persona.bio} subtitulo={persona.subtitulo} cores={persona.cores} />
+                <Card img={persona.gif || persona.img} titulo={persona.titulo} descricao={persona.bio} subtitulo={persona.subtitulo} cores={persona.cores} position={"left"} />
             </motion.div>
         </section>
     )
