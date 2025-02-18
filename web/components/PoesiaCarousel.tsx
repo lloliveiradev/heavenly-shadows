@@ -84,14 +84,14 @@ export default function PoesiaCarousel({ poesias, persona }) {
                 </div>
 
                 <button
-                    className={`bg-[${cores.fundo || '#fff'}] flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 md:-left-6 -translate-y-1/2 z-10 -translate-x-1/2 cursor-pointer hover:bg-gray-200`}
+                    className={`bg-[${cores.titulo || '#fff'}] flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 md:-left-6 -translate-y-1/2 -translate-x-1/2 cursor-pointer opacity-30 hover:opacity-100`}
                     onClick={scrollPrev}
                 >
                     <ChevronLeft className={`w-6 h-6 text-[${cores?.texto || '#1e2939'}]`} />
                 </button>
 
                 <button
-                    className={`bg-[${cores.fundo || '#fff'}] flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 -right-10 md:-right-16 -translate-y-1/2 z-10 -translate-x-1/2 cursor-pointer hover:bg-gray-200`}
+                    className={`bg-[${cores.titulo || '#fff'}] flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 -right-10 md:-right-16 -translate-y-1/2 -translate-x-1/2 cursor-pointer opacity-30 hover:opacity-100`}
                     onClick={scrollNext}
                 >
                     <ChevronRight className={`w-6 h-6 text-[${cores?.texto || '#1e2939'}]`} />
@@ -117,7 +117,7 @@ export default function PoesiaCarousel({ poesias, persona }) {
                             {splitText(text)}
                         </motion.div>
                     </div>
-                    <div className='md:hidden flex items-center justify-center'>
+                    <div className='md:hidden flex items-center justify-center pt-10'>
                         <button title='Fechar' className="rounded-full p-2 bg-white hover:bg-gray-300 text-black cursor-pointer" onClick={() => { setOpen(false), setText(''), setTitle(''); }} >
                             <XIcon />
                         </button>

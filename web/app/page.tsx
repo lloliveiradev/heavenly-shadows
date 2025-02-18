@@ -18,7 +18,15 @@ export default async function Home() {
     { name: "Personas", href: "#persons" },
     { name: "Contato", href: "#contact" },
   ];
-  const cores = { primaria: 'slate-700', secundaria: '#1e2939', terciaria: 'blue-900', gradient: '#1d293d', texto: 'white', titulo: 'slate-700' }
+  const cores = {
+    fundo: '#1d293d',
+    gradient: '#1d293d',
+    primaria: 'slate-700',
+    secundaria: '#1e2939',
+    terciaria: 'blue-900',
+    texto: 'white',
+    titulo: 'slate-700',
+  };
   return (
     <div className="bg-primary-black overflow-hidden" id="pageAppElement">
       <Navbar navItems={navItems} cores={cores} />
@@ -27,7 +35,7 @@ export default async function Home() {
         img=""
         title="Sombras"
         subtitle="Celestes"
-        text='um viagem literária ao lado poeta interestelar'
+        text='um viagem literária ao lado do poeta interestelar'
       />
       <About cores={cores} />
       <Main personas={data} />

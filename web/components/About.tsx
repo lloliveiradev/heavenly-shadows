@@ -32,7 +32,14 @@ export default function About({ cores }) {
             >
                 <TypingText title="| Sobre" textStyles="text-center pb-10" />
 
-                <Card img={'/images/poet-4.jpg'} titulo="Leo L. Oliveira" descricao={bio} subtitulo="Poeta Interestelar" cores={cores} position={"left"} />
+                <Card
+                    img={'/images/poet-4.jpg'}
+                    titulo="Leo L. Oliveira"
+                    descricao={bio}
+                    subtitulo="O Poeta Interestelar"
+                    cores={cores}
+                    position={"left"}
+                />
             </motion.div>
         </section>
     )

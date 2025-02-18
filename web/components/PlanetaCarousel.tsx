@@ -40,7 +40,7 @@ export default function PlanetaCarousel({ planeta, persona }) {
                 className={`mx-auto ${styles.flexCenter} flex-col w-full md:w-[70hw]`}
             >
                 <TypingText title="| Planeta" textStyles="text-center mb-5" />
-                <Card img={img} titulo={titulo} subtitulo={subtitulo} descricao={descricao} cores={cores} position='left' />
+                <Card img={img} titulo={titulo} subtitulo={subtitulo} descricao={descricao} cores={cores} position='right' />
             </motion.div>
 
             <motion.div
@@ -49,7 +49,7 @@ export default function PlanetaCarousel({ planeta, persona }) {
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}>
                 <TypingText title="| Capital" textStyles="text-center my-5" />
-                <Card img={capital.img} titulo={capital.titulo} subtitulo={capital.subtitulo} descricao={capital.descricao} cores={cores} position='right' />
+                <Card img={capital.img} titulo={capital.titulo} subtitulo={capital.subtitulo} descricao={capital.descricao} cores={cores} position='left' />
             </motion.div>
 
             <motion.div
@@ -77,14 +77,14 @@ export default function PlanetaCarousel({ planeta, persona }) {
                 </div>
 
                 <button
-                    className={`bg-[${cores.fundo || '#fff'}] flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 md:-left-6 -translate-y-1/2 z-10 -translate-x-1/2 cursor-pointer hover:bg-gray-200`}
+                    className={`bg-[${cores.titulo || '#fff'}] flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 md:-left-6 -translate-y-1/2 -translate-x-1/2 cursor-pointer opacity-30 hover:opacity-100`}
                     onClick={scrollPrev}
                 >
                     <ChevronLeft className={`w-6 h-6 text-[${cores?.texto || '#1e2939'}]`} />
                 </button>
 
                 <button
-                    className={`bg-[${cores.fundo || '#fff'}] flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 -right-10 md:-right-16 -translate-y-1/2 z-10 -translate-x-1/2 cursor-pointer hover:bg-gray-200`}
+                    className={`bg-[${cores.titulo || '#fff'}] flex items-center justify-center w-10 h-10 rounded-full shadow-lg absolute top-1/2 -right-10 md:-right-16 -translate-y-1/2 -translate-x-1/2 cursor-pointer opacity-30 hover:opacity-100`}
                     onClick={scrollNext}
                 >
                     <ChevronRight className={`w-6 h-6 text-[${cores?.texto || '#1e2939'}]`} />

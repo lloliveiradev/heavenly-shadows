@@ -3,37 +3,41 @@ module.exports = {
     safelist: [
         //apollo
         'bg-[#1e2939]',//fundo
-        'bg-[#bd9d5f]',//primaria
+        'bg-[#bd9d5f]',//primaria e titulo
         'bg-[#af8023]',//secundaria
+        'bg-[#fdc700]',//terciaria
         'from-[#af8023]',//gradiente
         'text-[#1e2939]',//fundo
         'text-[#bd9d5f]',//primaria e titulo
         'text-[#af8023]',//secundaria
+        'text-[#fdc700]',//terciaria
         'text-[#f3f4f6]',//texto
-        //irwin
-        'bg-cyan-800',
-        'text-cyan-800',
-        'bg-cyan-600',
-        'text-cyan-600',
-        'bg-blue-900',
-        'text-blue-900',
-        'from-[#053345]',
-        //munir
-        'bg-emerald-900',
-        'text-emerald-900',
-        'bg-emerald-700',
-        'text-emerald-700',
-        'bg-sky-300',
-        'text-sky-300',
-        'from-[#002c22]',
         //corvus
-        'bg-slate-700',
-        'text-slate-700',
-        'bg-violet-950',
-        'text-violet-950',
-        'text-violet-800',
-        'bg-violet-800',
-        'from-[#1e1a4d]',
+        'bg-[#1e1a4d]',//primaria
+        'bg-[#372aac]',//secundaria
+        'bg-[#8c85dd]',//titulo
+        'bg-[#312c85]',//terciaria
+        'from-[#1e1a4d]',//gradiente
+        'text-[#1e1a4d]',//fundo
+        'text-[#8c85dd]',//primaria e titulo
+        'text-[#372aac]',//secundaria
+        'text-[#312c85]',//terciaria
+        //irwin
+        'bg-[#0092b8]',//primaria e titulo
+        'bg-[#005f78]',//secundaria
+        'bg-[#0084d1]',//terciaria
+        'from-[#053345]',//gradiente
+        'text-[#0092b8]',//primaria e titulo
+        'text-[#005f78]',//secundaria
+        'text-[#0084d1]',//terciaria
+        //munir
+        'bg-[#009689]',//primaria e titulo
+        'bg-[#00786f]',//secundaria
+        'bg-[#bedbff]',//terciaria
+        'from-[#00302f]',//gradiente
+        'text-[#009689]',//primaria e titulo
+        'text-[#00786f]',//secundaria
+        'text-[#bedbff]',//terciaria
         //geral
         'bg-gray-700',
         'text-gray-100',
@@ -44,6 +48,7 @@ module.exports = {
         { pattern: /text-./, variants: ['hover:', '/'] },
         'w-[40px]',
         'bg-black',
+        'bg-black/70',
         'bg-transparent',
         'bg-blue-900',
         'text-blue-900',
@@ -52,6 +57,7 @@ module.exports = {
         'bg-sky-700',
         'text-sky-700',
         'from-[#1d293d]',
-        'bg-[#1e2939]'
+        'bg-[#1e2939]',
+        'bg-[#1d293d]',
     ],
 };

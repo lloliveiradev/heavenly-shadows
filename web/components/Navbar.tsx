@@ -22,7 +22,7 @@ export default function Navbar({ navItems, cores }) {
       className={`${styles.xPaddings} py-8 px-5 relative bg-linear-to-r from-[${cores.gradient || '#1e293b'}] to-[#080b10]`}
     >
       <div className={`mx-auto flex justify-between gap-8`}>
-        <Link href="#home" className="mr-4 block cursor-pointer pt-1" >
+        <Link href="/" className="mr-4 block cursor-pointer pt-1" >
           <Image
             src={logo}
             alt="logo sombras celestes"
