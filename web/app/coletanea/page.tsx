@@ -1,7 +1,3 @@
-interface ColetaneaProps {
-    searchParams: { persona: string }
-}
-
 import { getPoesias } from "../../server/poesia";
 import { getPersonas } from "../../server/persona";
 import { getPlaneta } from "@/server/planeta";
@@ -14,10 +10,14 @@ import PersonaAbout from "@/components/PersonaAbout";
 import BackToTop from "@/components/BackToTop";
 import PlanetaCarousel from "@/components/PlanetaCarousel";
 
-export default async function Coletanea({ searchParams }: ColetaneaProps) {
-    const params = await searchParams;
-    const id_persona = params.persona;
+interface ColetaneaPageProps {
+    params?: { [key: string]: string };
+    searchParams: { [key: string]: string | string[] | undefined };
+};
 
+export default async function Coletanea({ searchParams }: ColetaneaPageProps) {
+    const params = await searchParams;
+    const id_persona = Array.isArray(params.persona) ? params.persona[0] : params.persona;
     const options = { filters: [{ key: 'persona', op: '==', val: id_persona }] };
     const persona = await getPersonas(process.env.API_URL, id_persona, null);
     const poesias = await getPoesias(process.env.API_URL, null, options);
@@ -47,4 +47,4 @@ export default async function Coletanea({ searchParams }: ColetaneaProps) {
             <BackToTop cores={persona.cores} />
         </div>
     );
-}
+};

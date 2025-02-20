@@ -63,7 +63,7 @@ export default function PlanetaCarousel({ planeta, persona }) {
             <div className="relative pt-10">
                 <div className='overflow-hidden' ref={emblaRef}>
                     <div className='flex'>
-                        {regioes.map((regiao: Regiao, i: number) => (
+                        {regioes.map((regiao: Regiao) => (
                             <RegiaoCard
                                 key={regiao.rowid}
                                 id={regiao.rowid}

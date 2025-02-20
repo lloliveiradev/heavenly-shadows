@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { TypingText } from '.';
+import { TypingText } from './CustomTexts';
 import { staggerContainer } from '../utils/motion'
 import styles from '../styles/index';
 import Card from './Card';

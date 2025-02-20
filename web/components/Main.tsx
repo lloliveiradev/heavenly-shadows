@@ -29,8 +29,8 @@ export default function Main({ personas }) {
                 <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
                     {personas.map((p: Persona, index: number) => (
                         <PersonaCard
-                            key={p.id}
-                            {...p}
+                            key={p.rowid}
+                            persona={p}
                             index={index}
                             active={active}
                             handleClick={setActive}

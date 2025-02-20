@@ -7,4 +7,4 @@ import { ContatoController } from './contato.controller';
   providers: [ContatoService],
   exports: [ContatoService],
 })
-export class ContatoModule { }
+export class ContatoModule {}

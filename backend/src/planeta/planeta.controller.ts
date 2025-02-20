@@ -1,11 +1,19 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { PlanetaService } from './planeta.service';
 import { CreatePlanetaDto } from './dto/create-planeta.dto';
 import { UpdatePlanetaDto } from './dto/update-planeta.dto';
 
 @Controller('planeta')
 export class PlanetaController {
-  constructor(private readonly planetaService: PlanetaService) { }
+  constructor(private readonly planetaService: PlanetaService) {}
 
   // @Post()
   // create(@Body() createPlanetaDto: CreatePlanetaDto) {

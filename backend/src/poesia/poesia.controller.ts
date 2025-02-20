@@ -1,11 +1,19 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { PoesiaService } from './poesia.service';
 import { CreatePoesiaDto } from './dto/create-poesia.dto';
 import { UpdatePoesiaDto } from './dto/update-poesia.dto';
 
 @Controller('poesia')
 export class PoesiaController {
-  constructor(private readonly poesiaService: PoesiaService) { }
+  constructor(private readonly poesiaService: PoesiaService) {}
 
   // @Post()
   // create(@Body() createPoesiaDto: CreatePoesiaDto) {

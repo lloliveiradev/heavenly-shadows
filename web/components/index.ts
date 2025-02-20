@@ -12,7 +12,6 @@ export * from './Main';
 export * from './Modal';
 export * from './Navbar';
 export * from './PersonaCard';
-export * from './PersonaHero';
 export * from './PlanetaCarousel';
 export * from './PoesiaCard';
 export * from './PoesiaCarousel';

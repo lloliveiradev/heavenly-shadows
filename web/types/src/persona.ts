@@ -3,9 +3,13 @@ export interface Persona {
     bio: string;
     convite: string;
     cores: {
+        fundo: string;
+        gradient: string;
         primaria: string;
         secundaria: string;
         terciaria: string;
+        texto: string;
+        titulo: string;
     };
     descricao: string;
     gif: string;

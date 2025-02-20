@@ -13,9 +13,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <head>
-        <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@500&amp;display=swap" rel="stylesheet"></link>
-      </head>
       <body className="scrollbar-rounded">
         {children}
       </body>

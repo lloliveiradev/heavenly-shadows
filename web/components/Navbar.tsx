@@ -7,8 +7,9 @@ import logo from "../public/images/full_logo.png";
 import { motion } from 'framer-motion';
 import { navVariants } from '../utils/motion';
 import { useState } from "react";
+import { Cores, NavItems } from '@/types';
 
-export default function Navbar({ navItems, cores }) {
+export default function Navbar({ navItems, cores }: { navItems: NavItems[], cores: Cores }) {
   const [isMobile, setIsMobile] = useState(false);
   const toggleMobile = () => {
     setIsMobile(!isMobile);
@@ -66,7 +67,7 @@ export default function Navbar({ navItems, cores }) {
             </button>
           </div>
           <ul className="flex flex-col h-full gap-4 p-4">
-            {navItems.map((item: any, index: number) => (
+            {navItems.map((item: NavItems, index: number) => (
               <li key={index} className={`flex items-center p-1 text-lg gap-x-2 text-gray-100 hover:text-${cores?.secundaria || 'violet-500'}`}>
                 <Link href={item.href} className="flex items-center" onClick={toggleMobile}>
                   {item.name}
@@ -79,7 +80,7 @@ export default function Navbar({ navItems, cores }) {
         {/* Desktop Menu */}
         <div className="hidden lg:block">
           <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-            {navItems.map((item: any, index: number) => (
+            {navItems.map((item: NavItems, index: number) => (
               <li key={index} className={`flex items-center p-1 text-lg gap-x-2 text-gray-100 hover:text-${cores?.secundaria || 'violet-500'}`}>
                 <Link href={item.href} className="flex items-center">
                   {item.name}

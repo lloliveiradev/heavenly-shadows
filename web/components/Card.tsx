@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { TitleText, TypingText } from './CustomTexts';
 import { staggerContainer } from '@/utils/motion';
 import splitText from '@/utils/splitText';
+import Image from 'next/image';
 
 const Card = ({ img, titulo, subtitulo, descricao, cores, position }) => {
     return (
@@ -17,9 +18,11 @@ const Card = ({ img, titulo, subtitulo, descricao, cores, position }) => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
             >
-                <img
+                <Image
                     src={img}
                     alt={titulo}
+                    width={500}
+                    height={500}
                     className="object-cover w-full h-full"
                 />
             </motion.div>}
@@ -47,9 +50,11 @@ const Card = ({ img, titulo, subtitulo, descricao, cores, position }) => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
             >
-                <img
+                <Image
                     src={img}
                     alt={titulo}
+                    width={500}
+                    height={500}
                     className="object-cover w-full h-full"
                 />
             </motion.div>}

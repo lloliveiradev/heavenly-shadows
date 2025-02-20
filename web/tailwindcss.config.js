@@ -57,7 +57,6 @@ module.exports = {
         'bg-sky-700',
         'text-sky-700',
         'from-[#1d293d]',
-        'bg-[#1e2939]',
         'bg-[#1d293d]',
     ],
 };

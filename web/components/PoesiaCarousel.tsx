@@ -15,9 +15,9 @@ import { staggerContainer } from '@/utils/motion';
 
 import styles from '@/styles';
 
-import { Poesia } from '@/types';
+import { Persona, Poesia } from '@/types';
 
-export default function PoesiaCarousel({ poesias, persona }) {
+export default function PoesiaCarousel({ poesias, persona }: { poesias: Poesia[], persona: Persona }) {
     // Carousel
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: false,
@@ -47,6 +47,12 @@ export default function PoesiaCarousel({ poesias, persona }) {
         setTitle(poesia.titulo);
         setText(poesia.texto);
     };
+    function closeModal() {
+        setOpen(false);
+        setText('');
+        setTitle('');
+    };
+
     const { audio, cores, convite } = persona;
     return (
         <section className={`${styles.paddings} pt-10 relative bg-primary-black text-white`} id='main'>
@@ -69,7 +75,7 @@ export default function PoesiaCarousel({ poesias, persona }) {
             <div className="relative pt-10">
                 <div className='overflow-hidden' ref={emblaRef}>
                     <div className='flex'>
-                        {poesias.map((poesia: Poesia, i: number) => (
+                        {poesias.map((poesia: Poesia) => (
                             <PoesiaCard
                                 key={poesia.id}
                                 id={poesia.id}
@@ -102,7 +108,7 @@ export default function PoesiaCarousel({ poesias, persona }) {
                 <div className="h-[100vh] md:h-[90vh] text-center overflow-y-scroll bg-primary-black bg-opacity-70 text-white px-2 md:px-6 pb-10 pt-5 rounded-lg scrollbar-rounded">
                     <div className="flex items-center justify-between px-2 border-b border-gray-300 pb-4">
                         <h3 className="text-[30px] fw-bold text-white uppercase" ref={titleRef}>{title}</h3>
-                        <button title='Fechar' className="rounded-full p-2 bg-white hover:bg-gray-300 text-black cursor-pointer" onClick={() => { setOpen(false), setText(''), setTitle(''); }} >
+                        <button title='Fechar' className="rounded-full p-2 bg-white hover:bg-gray-300 text-black cursor-pointer" onClick={closeModal} >
                             <XIcon />
                         </button>
                     </div>
@@ -118,7 +124,7 @@ export default function PoesiaCarousel({ poesias, persona }) {
                         </motion.div>
                     </div>
                     <div className='md:hidden flex items-center justify-center pt-10'>
-                        <button title='Fechar' className="rounded-full p-2 bg-white hover:bg-gray-300 text-black cursor-pointer" onClick={() => { setOpen(false), setText(''), setTitle(''); }} >
+                        <button title='Fechar' className="rounded-full p-2 bg-white hover:bg-gray-300 text-black cursor-pointer" onClick={closeModal} >
                             <XIcon />
                         </button>
                     </div>

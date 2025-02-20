@@ -10,7 +10,7 @@ export default function AudioPlayer({ src, cores }) {
     const [volume, setVolume] = useState(0.25);
     const [volumeIcon, setVolumeIcon] = useState(<Volume />);
     const [currentTime, setCurrentTime] = useState(0);
-    const [duration, setDuration] = useState(0);
+    //const [duration, setDuration] = useState(0);
 
     const clickPlay = () => {
         if (!audioRef.current) return;
@@ -34,29 +34,29 @@ export default function AudioPlayer({ src, cores }) {
         const audio = audioRef.current;
         if (!audio) return;
 
-        const onLoaded = () => {
-            setDuration(audio.duration);
-        };
+        // const onLoaded = () => {
+        //     setDuration(audio.duration);
+        // };
 
         const changeTime = () => {
             setCurrentTime(audio.currentTime);
         };
 
-        audio.addEventListener('loadedmetadata', onLoaded);
+        //audio.addEventListener('loadedmetadata', onLoaded);
         audio.addEventListener('timeupdate', changeTime);
 
         return () => {
-            audio.removeEventListener('loadedmetadata', onLoaded);
+            //audio.removeEventListener('loadedmetadata', onLoaded);
             audio.removeEventListener('timeupdate', changeTime);
         };
     }, []);
-    const changeTime = (e) => {
-        const newTime = parseFloat(e.target.value);
-        if (audioRef.current) {
-            audioRef.current.currentTime = newTime;
-        }
-        setCurrentTime(newTime);
-    };
+    // const changeTime = (e) => {
+    //     const newTime = parseFloat(e.target.value);
+    //     if (audioRef.current) {
+    //         audioRef.current.currentTime = newTime;
+    //     }
+    //     setCurrentTime(newTime);
+    // };
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60);
         const seconds = Math.floor(time % 60);

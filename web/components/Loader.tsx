@@ -1,4 +1,4 @@
-export default function Loader({ fill, stroke }) {
+export default function Loader({ fill = null, stroke = null }) {
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
             <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 150'>

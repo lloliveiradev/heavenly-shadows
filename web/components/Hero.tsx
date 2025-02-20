@@ -6,7 +6,7 @@ import { staggerContainer, textVariant } from '../utils/motion';
 
 export default function Hero({ title, subtitle, text, img, cores }) {
     return (
-        <section className='relative overflow-hidden py-16 px-10 h-[50vh]' id='home'>
+        <section className='relative overflow-hidden pt-1 px-10 h-[50vh]' id='home'>
             <div className={`w-full h-full inset-0 bg-cover bg-center absolute z-0`}
                 style={{ backgroundImage: img ? `url('${img}')` : 'url("./images/hero-index.webp")' }}
             >

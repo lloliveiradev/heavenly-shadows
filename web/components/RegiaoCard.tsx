@@ -12,7 +12,8 @@ export default function RegiaoCard({ id, title, img, text, cores }) {
                         src={img}
                         alt={title}
                         className='object-cover h-fit w-fit p-0 m-0 rounded-t-2xl hover:scale-115 transform transition-all duration-300'
-                        fill
+                        width={500}
+                        height={500}
                     />
                 </div>
                 <div className='flex-1 flex-col items-start justify-between select-none'>

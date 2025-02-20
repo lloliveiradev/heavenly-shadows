@@ -1,6 +1,6 @@
 import * as firebaseAdmin from 'firebase-admin';
 import { DynamicModule, Global, Module } from '@nestjs/common';
-import { ConfigService, ConfigModule } from '@nestjs/config';
+import { ConfigService } from '@nestjs/config';
 import { FirebaseConfigService } from './firebase-config.service';
 import { FirebaseService } from './firebase.service';
 
@@ -15,7 +15,7 @@ export class FirebaseModule {
       provide: FirebaseConfigService,
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
-        const apiKey = configService.get<string>('FIREBASE_API_KEY');
+        const apiKey = configService.get<string>('FB_API_KEY');
         if (!apiKey) {
           throw new Error('FIREBASE_API_KEY environment variable is not set');
         }
@@ -27,9 +27,7 @@ export class FirebaseModule {
       provide: 'FIREBASE_ADMIN',
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => {
-        const credentials = configService.get<string>(
-          'FIREBASE_ADMIN_CREDENTIALS',
-        );
+        const credentials = configService.get<string>('FB_ADMIN_CREDENTIALS');
         if (!credentials) {
           throw new Error(
             'FIREBASE_ADMIN_CREDENTIALS environment variable is not set',

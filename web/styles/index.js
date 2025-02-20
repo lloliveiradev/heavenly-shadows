@@ -14,7 +14,7 @@ const styles = {
     navPadding: 'pt-[98px]',
 
     // hero section
-    heroHeading: 'font-bold lg:text-[90px] md:text-[60px] sm:text-[44px] text-[30px] lg:leading-[114.4px] md:leading-[74.4px] sm:leading-[64.4px] leading-[40.4px] uppercase text-gray-100',
+    heroHeading: 'font-bold md:text-[60px] sm:text-[44px] text-[30px] md:leading-[74.4px] sm:leading-[64.4px] leading-[40.4px] uppercase text-gray-100',
     heroDText: 'md:w-[212px] sm:w-[80px] w-[60px] md:h-[108px] sm:h-[48px] h-[38px] md:border-[18px] border-[9px] rounded-r-[50px] border-white sm:mx-2 mx-[6px]',
 };
 

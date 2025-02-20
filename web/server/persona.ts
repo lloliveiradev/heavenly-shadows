@@ -18,7 +18,8 @@ export const getPersonas = async (API_URL: string | undefined, id?: string, opti
         cache: 'force-cache',
         method: id ? 'GET' : 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: id ? undefined : JSON.stringify(options)
+        body: id ? undefined : JSON.stringify(options),
+        next: { revalidate: 20 }
     });
     const data = await response.json();
     const icons = {

@@ -20,21 +20,21 @@ export class FirebaseService {
       return await db.get(id);
     } else {
       return await db.getWhere(options);
-    };
-  };
+    }
+  }
 
   async createRecord(collection: string, data: any, user: apiUser) {
     const db = new Firestore(firebaseAdmin.firestore(), collection, false);
     return await db.add(data, user);
-  };
+  }
 
   async updateRecord(collection: string, id: string, data: any, user: apiUser) {
     const db = new Firestore(firebaseAdmin.firestore(), collection, false);
     return await db.set(id, data, user);
-  };
+  }
 
   async deleteRecord(collection: string, id: string, user: apiUser) {
     const db = new Firestore(firebaseAdmin.firestore(), collection, false);
     return await db.delete(id, user);
-  };
+  }
 }

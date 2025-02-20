@@ -14,7 +14,8 @@ export default function PoesiaCard({ id, title, img, text, openModal, persona })
                         src={img}
                         alt={title}
                         className='object-cover h-fit w-fit p-0 m-0 rounded-t-2xl hover:scale-115 transform transition-all duration-300'
-                        fill
+                        width={500}
+                        height={500}
                     />
                     <button type='button' className={`absolute bottom-0 right-0 bg-[${cores.primaria || '#fff'}] p-2 rounded-tl-lg cursor-pointer`}
                         title='Clique para ler a integra' data-rowid={id} onClick={openModal}>

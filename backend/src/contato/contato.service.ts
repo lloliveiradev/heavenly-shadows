@@ -8,10 +8,14 @@ export class ContatoService {
   private readonly collection: string;
   constructor(private readonly firebaseService: FirebaseService) {
     this.collection = 'contato';
-  };
+  }
 
   async create(createContatoDto: CreateContatoDto) {
-    const res = await this.firebaseService.createRecord(this.collection, createContatoDto, webservice);
+    const res = await this.firebaseService.createRecord(
+      this.collection,
+      createContatoDto,
+      webservice,
+    );
     return res;
   }
 }

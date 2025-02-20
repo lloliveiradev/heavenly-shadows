@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
 
-export default function PersonaCard({ id, img, icon, titulo, subtitulo, descricao, cores, index, active, handleClick }) {
+export default function PersonaCard({ persona, index, active, handleClick }) {
+    const { id, img, icon, titulo, subtitulo, descricao } = persona;
     return (
         <motion.div
             variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
@@ -34,7 +35,7 @@ export default function PersonaCard({ id, img, icon, titulo, subtitulo, descrica
                         {descricao}
                     </p>
                     <Link href={`/coletanea?persona=${id}`}>
-                        <button type='button' className={`mt-1 lg:mt-4 bg-${cores.primaria} text-white font-bold uppercase py-2 px-4 rounded-[8px] hover:bg-${cores.secundaria} transition-[background-color] duration-300 ease-in-out float-end cursor-pointer`}>
+                        <button type='button' className={`mt-1 lg:mt-4 bg-gray-800 text-white font-bold uppercase py-2 px-4 rounded-[8px] hover:bg-gray-600 transition-[background-color] duration-300 ease-in-out float-end cursor-pointer`}>
                             Explore
                         </button>
                     </Link>

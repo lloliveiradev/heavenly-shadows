@@ -5,3 +5,5 @@ export * from './src/planeta';
 export * from './src/regiao';
 export * from './src/capital';
 export * from './src/local';
+export * from './src/cores';
+export * from './src/navItems';

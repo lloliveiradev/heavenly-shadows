@@ -15,7 +15,11 @@ export class PoesiaService {
   // }
 
   async findAll(options: any) {
-    const res = await this.firebaseService.getRecords(this.collection, null, options);
+    const res = await this.firebaseService.getRecords(
+      this.collection,
+      null,
+      options,
+    );
     return res;
   }
 

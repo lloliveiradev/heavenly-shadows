@@ -15,13 +15,13 @@ import {
     FormMessage,
 } from "./ui/form";
 
-import { InstagramLogo, SpotifyLogo, YoutubeLogo, XLogo, LineVertical } from '@phosphor-icons/react';
+import { InstagramLogo, SpotifyLogo, YoutubeLogo, XLogo } from '@phosphor-icons/react';
 import WattpadLogo from "./WattpadLogo";
 import { TitleText, TypingText } from "./CustomTexts";
 import { fadeIn, staggerContainer } from "@/utils/motion";
 import { motion } from 'framer-motion';
 import { postContato } from "@/server/contato";
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { Alert } from "./Alert";
 import Loader from "./Loader";
 
@@ -48,7 +48,13 @@ const defAlert = {
     confirm: { show: false, text: '' },
 };
 
-export default function Contact({ API_URL }) {
+interface SocialIcons {
+    name: string;
+    icon: JSX.Element;
+    href: string;
+}
+
+export default function Contact({ API_URL }: { API_URL: string }) {
     const [alert, setAlert] = useState(defAlert);
     const [loading, setLoading] = useState(false);
     async function onCancel() {
@@ -122,7 +128,7 @@ export default function Contact({ API_URL }) {
                     <div className="space-y-4">
                         <h2 className="text-2xl text-center md:text-end">Redes Sociais</h2>
                         <ul className="space-y-4 pt-2 md:float-end">
-                            {social.map((item: any, index: number) => {
+                            {social.map((item: SocialIcons, index: number) => {
                                 return (
                                     <motion.li
                                         variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
